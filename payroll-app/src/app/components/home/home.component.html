@@ -1,0 +1,49 @@
+<nav class="navbar navbar-default bg-light navbar-fixed-top">
+    <div class="container-fluid">
+  
+      <!--heading on the nav bar-->
+      <p class="navbar-header pull-left">
+        <a class="navbar-brand thick">
+          <b>Home</b>
+        </a>
+      </p>
+  
+      <!--tick mark-->
+      <p class="navbar-text pull-right">
+          <a [routerLink]="['/login']">
+            <span class="glyphicon glyphicon-log-out"></span>
+          </a>
+      </p>
+  
+    </div>
+  </nav>
+  
+<div class="container">
+    <div class="row custyle">
+    <table class="table table-striped custab">
+    <thead class="thead-dark"> 
+    <button type="button"id="add-btn"  class="btn btn-primary" [routerLink]="['/add']"><b>+</b> Add new employee</button>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Final Salary</th>
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+            <tr *ngFor= "let employee of employees">
+                <td><a [routerLink]="['/home',employee._id]">{{employee.firstName}}  {{employee.lastName}}</a></td>
+                <td>{{employee.email}}</td>
+                <td>{{employee.finalSal}}</td>
+                <td class="text-center"><a class='btn btn-info btn-xs' [routerLink]="['/home',employee._id]"><span class="glyphicon glyphicon-edit"></span> Edit</a> 
+                  <a class='btn btn-danger btn-xs' [routerLink]="['/home',employee._id]"><span class="glyphicon glyphicon-remove"></span>Delete</a>
+      
+            </tr>
+    </table>
+    </div>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+  
+    </div>
+  </nav>

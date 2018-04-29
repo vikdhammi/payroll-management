@@ -1,0 +1,158 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+  
+      <!--heading on the nav bar-->
+      <p class="navbar-header pull-left">
+        <a class="navbar-brand thick" [routerLink]="['/home']">
+          <b>Home</b>
+        </a>
+      </p>
+  
+      <!--tick mark-->
+      <p class="navbar-text pull-right">
+        <a
+           class="navbar-link">
+          <span class="glyphicon glyphicon-log-out"></span>
+        </a>
+      </p>
+  
+    </div>
+  </nav>
+  
+  
+  <div class="container pushdown" id="inputData">
+  
+    <form (ngSubmit)="updateEmployee()" name="model.myform" #f="ngForm">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input 
+        [(ngModel)] = "employee.firstName"
+               type="text"
+               required
+               class="form-control"
+               id="firstName"
+               placeholder="John"
+               name="firstName"
+               />
+      </div>
+      
+      <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input 
+          [(ngModel)] = "employee.lastName"
+                 type="text"
+                 class="form-control"
+                 id="lastName"
+                 required
+                 placeholder="Samuels"
+                 name="lastName"
+                />
+        </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+        [(ngModel)] = "employee.email"       
+        type="email"
+               class="form-control"
+               id="email"
+               placeholder="john.samuels@yahoo.com"
+               required
+               name="email"
+               />
+      </div>
+  
+      <div class="form-group">
+        <label for="baseSalary">Base Salary</label>
+        <input 
+        [(ngModel)] = "employee.baseSal"
+               type="number"
+               class="form-control"
+               id="baseSalary"
+               placeholder="2000"
+               required
+               name="baseSal"
+               />
+      </div>
+  
+      <div class="form-group">
+        <label for="medical">Medical Deduction</label>
+        <input 
+        [(ngModel)] = "employee.medical"
+               type="number"
+               class="form-control"
+               id="medical"
+               placeholder="300"
+               required
+               name="medical"
+               />
+      </div>
+
+      <div class="form-group">
+          <label for="tax">Tax Deduction</label>
+          <input 
+          [(ngModel)] = "employee.tax"
+                 type="number"
+                 class="form-control"
+                 id="tax"
+                 placeholder="500"
+                 required
+                 name="tax"
+                 />
+        </div>
+
+        <!-- <div class="form-group">
+            <label for="finalSalary">Take Home Salary</label>
+            <input 
+            [(ngModel)] = "employee.finalSal"
+                   type="text"
+                   
+                   class="form-control"
+                   id="finalSalary"
+                   placeholder="2500"
+                   required
+                   name="finalSal"
+                   />
+          </div> -->
+  
+    <button class="btn btn-primary btn-block" type="submit">Update Employee</button>
+    <button class="btn btn-danger btn-block" type="submit" data-toggle="modal" data-target="#exampleModalCenter">Delete Employee</button>
+    
+    <!-- Modal -->
+  <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Delete Employee?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <b> Are you sure you want to Delete Employee? </b>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" (click)="deleteEmployee()"  data-dismiss="modal">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    </form>
+  </div>
+  
+  <!-- Footer -->
+  
+  <nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <p class="navbar-text pull-right">
+            <a [routerLink]="['/home']">
+              <span class="glyphicon glyphicon-user"></span>
+            </a>
+          </p>
+    </div>
+  </nav>
+
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">

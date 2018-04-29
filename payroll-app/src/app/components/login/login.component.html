@@ -1,0 +1,22 @@
+
+<div class="container" style="margin-top:30px">
+    <div class="col-md-6">
+        <div class="panel panel-default">
+      <div class="panel-heading"><h3 class="panel-title"><strong>Payroll Management</strong></h3></div>
+      <div class="panel-body">
+       <form role="form" #f="ngForm">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username"  placeholder="username">
+        <!-- <span class="help-block" *ngIf="!username.valid && username.touched">Please enter username!</span> -->
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password"  placeholder="Password">
+        <!-- <span class="help-block" *ngIf="!password.valid && password.touched">Please enter password!</span> -->
+      </div>
+      <button type="button" class="btn btn-primary btn-block" [routerLink]="['/home']">Log In</button>
+    </form>
+      </div>
+    </div>
+    </div>
