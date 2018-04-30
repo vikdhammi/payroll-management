@@ -7,7 +7,6 @@
     "ang-start": "ng serve",
     "node-start": "node server.js",
     "start": "ng serve",
-    // "start": "npm-run-all -p -r node-start ang-start",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
