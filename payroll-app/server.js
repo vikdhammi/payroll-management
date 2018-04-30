@@ -4,7 +4,16 @@ const http = require('http');
 const bodyParser = require('body-parser');
 const app = express();
 
-var connectionString = 'mongodb://127.0.0.1:27017/EmployeeDB';
+//var connectionString = 'mongodb://127.0.0.1:27017/EmployeeDB';
+var connectionString = ''
+
+if(process.env.MLAB_USERNAME) { 
+    var username = process.env.MLAB_USERNAME; 
+    var password = process.env.MLAB_PASSWORD;
+    connectionString = 'mongodb://' + username + ':' + password;
+    connectionString += '@ds263639.mlab.com:63639/heroku_066cw7mj'; 
+ }
+ 
 var mongoose = require("mongoose");
 mongoose.connect(connectionString, { socketTimeoutMS: 30000, keepAlive: true, reconnectTries: 3000});
 
