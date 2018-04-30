@@ -6,12 +6,12 @@
     "ng": "ng",
     "ang-start": "ng serve",
     "node-start": "node server.js",
-    "start": "ng serve",
+    "start": "ng serve --prod",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot --env=prod"
+    "postinstall": "ng build --aot --prod"
   },
   "private": true,
   "dependencies": {
