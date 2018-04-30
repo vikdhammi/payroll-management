@@ -34,7 +34,7 @@ var serverSide = require('./server/app');
 serverSide(app);
 
 app.use('*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'src/index.html'));
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 })
 
 app.use(function(req, res, next) {
