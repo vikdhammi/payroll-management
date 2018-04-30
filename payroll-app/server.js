@@ -46,6 +46,6 @@ app.use(function(req, res, next) {
     next();
   });
 
-var PPORT = process.env.PORT || port;
-
+//var PPORT = process.env.PORT || port;
+var PPORT = process.env.PORT || 8080;
 server.listen(PPORT, ()=> console.log(`API running on localhost:${port}`));
