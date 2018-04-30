@@ -4,7 +4,9 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve node server.js",
+    "ang-start" : "ng serve",
+    "node-start" : "node server.js",
+    "start": "npm-run-all -p -r node-start ang-start",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
@@ -14,7 +16,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^5.2.0",
-    "@angular/cli" : "^1.7.4",
+    "@angular/cli": "^1.7.4",
     "@angular/common": "^5.2.0",
     "@angular/compiler": "^5.2.0",
     "@angular/core": "^5.2.0",
@@ -26,6 +28,7 @@
     "core-js": "^2.4.1",
     "express": "^4.16.3",
     "mongoose": "^5.0.16",
+    "npm-run-all": "^4.1.2",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },

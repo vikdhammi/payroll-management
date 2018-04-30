@@ -5,12 +5,13 @@ const bodyParser = require('body-parser');
 const app = express();
 
 //var connectionString = 'mongodb://127.0.0.1:27017/EmployeeDB';
-var connectionString = ''
+var connectionString = '';
 
 if(process.env.MLAB_USERNAME) { 
     var username = process.env.MLAB_USERNAME; 
     var password = process.env.MLAB_PASSWORD;
     connectionString = 'mongodb://' + username + ':' + password;
+    console.log(connectionString);
     connectionString += '@ds263639.mlab.com:63639/heroku_066cw7mj'; 
  }
  
@@ -34,7 +35,7 @@ var serverSide = require('./server/app');
 serverSide(app);
 
 app.use('*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+    res.sendFile(path.join(__dirname,  'src/index.html'));
 })
 
 app.use(function(req, res, next) {
