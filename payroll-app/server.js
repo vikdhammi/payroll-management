@@ -34,7 +34,9 @@ const server = http.createServer(app);
 var serverSide = require('./server/app');
 serverSide(app);
 
-app.use('*', function (req, res) {
+app.use(express.static(path.join(__dirname, '/dist')));
+
+app.use('/', function (req, res) {
     res.sendFile(path.join(__dirname,  'dist/index.html'));
 })
 
